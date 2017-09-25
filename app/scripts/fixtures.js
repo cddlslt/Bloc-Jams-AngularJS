@@ -1,4 +1,4 @@
-const album = {
+const albumPicasso = {
   title: 'The Colors',
   artist: 'Pablo Picasso',
   releaseInfo: '1909 Spanish Records',
