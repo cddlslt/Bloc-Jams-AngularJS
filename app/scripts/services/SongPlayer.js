@@ -2,6 +2,10 @@
   function SongPlayer() {
     var SongPlayer = {};
 
+    /**
+    @desc empty song object used to store value of song currently playing
+    @type {Object}
+    */
     var currentSong = null;
     /**
     @desc Buzz object audio file
@@ -28,6 +32,23 @@
       currentSong = song;
     };
 
+    /**
+    @function playSong
+    @desc play currentBuzzObject & set playing property of the song to true
+    @param {Object} song
+    */
+    var playSong = function(song) {
+      if (currentBuzzObject) {
+        currentBuzzObject.play();
+        song.playing = true;
+      }
+    };
+
+    /**
+    @method play
+    @desc gives play button functionality
+    @param {Object} song
+    */
     SongPlayer.play = function(song) {
       if (currentSong !== song) {
         setSong(song);
@@ -42,6 +63,11 @@
 
     };
 
+    /**
+    @method pause
+    @desc gives pause button fucntionality
+    @param {Object} song
+    */
     SongPlayer.pause = function(song) {
       currentBuzzObject.pause();
       song.playing = false;
