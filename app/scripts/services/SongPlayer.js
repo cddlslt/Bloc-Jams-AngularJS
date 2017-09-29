@@ -53,7 +53,7 @@
     var stopSong = function(song) {
       if (currentBuzzObject) {
         currentBuzzObject.stop();
-        //song.playing = null;
+        song.playing = null;
       }
     };
 
@@ -136,7 +136,7 @@
           playSong(song);
       } else {
           setSong(currentAlbum.songs[0]);
-          playSong(song);
+          playSong(currentAlbum.songs[0]);
       }
     };
 
