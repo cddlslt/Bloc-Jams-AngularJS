@@ -113,7 +113,8 @@
       currentSongIndex--;
 
       if (currentSongIndex < 0) {
-        stopSong(song);
+        setSong(currentAlbum.songs[currentAlbum.songs.length - 1]);
+        playSong(song);
       } else {
           var song = currentAlbum.songs[currentSongIndex];
           setSong(song);
@@ -129,11 +130,12 @@
       var currentSongIndex = getSongIndex(SongPlayer.currentSong);
       currentSongIndex++;
 
-      if (currentSongIndex == currentAlbum.songs.length) {
-        stopSong(song);
-      } else {
-          var song = currentAlbum.songs[currentSongIndex];
+      if (currentSongIndex !== currentAlbum.songs.length) {
+        var song = currentAlbum.songs[currentSongIndex];
           setSong(song);
+          playSong(song);
+      } else {
+          setSong(currentAlbum.songs[0]);
           playSong(song);
       }
     };
