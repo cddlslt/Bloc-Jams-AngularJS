@@ -1,5 +1,5 @@
 (function() {
-    function seekBar() {
+    function seekBar($document) {
         /**
         @func calculatePercent
         @desc calculates horizontal percent along seek bar where event occurs
@@ -49,8 +49,12 @@
                     return {width: percentString()};
                 };
 
+                /**
+                *@method thumbStyle
+                *@desc updates the position of the seek bar thumb
+                */
                 scope.thumbStyle = function() {
-                    return {width: percentString()};
+                    return {left: percentString()};
                 };
 
                 /**
